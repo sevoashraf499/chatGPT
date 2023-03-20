@@ -1,0 +1,63 @@
+:root {
+  --messages-list-bg-color: hsl(232, 11%, 30%);
+  --messages-input-container-bg-color: hsl(235, 11%, 23%);
+  --input-text-color: hsl(0, 0%, 100%);
+}
+
+@mixin flexBox($flexFlow, $justifyContent, $alignItems) {
+  display: flex;
+  flex-flow: $flexFlow;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+.message-input {
+  width: 100vw;
+  height: 15vh;
+  background-color: var(--messages-input-container-bg-color);
+
+  @include flexBox(row-wrap, center, center);
+  gap: 1rem;
+
+  > textarea {
+    width: 60%;
+    height: 1.5rem;
+    padding-block: 0.75rem;
+    padding-left: 0.75rem;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    resize: none;
+    font-size: 16px;
+    border: 0;
+    outline: none;
+    border-radius: 0.25rem;
+    overflow-y: scroll;
+    color: var(--input-text-color);
+    background: var(--messages-list-bg-color);
+  }
+
+  > textarea::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  > textarea::-webkit-scrollbar-track {
+    background-color: var(--messages-list-bg-color);
+  }
+  > textarea::-webkit-scrollbar-thumb {
+    background-color: var(--messages-input-container-bg-color);
+    border: 0.01rem solid var(--messages-input-container-bg-color);
+    border-radius: 1.25rem;
+  }
+  > span {
+    width: 2.25rem;
+    height: 2.1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.25s;
+
+    @include flexBox(row-nowrap, center, center);
+  }
+
+  > span:hover {
+    background-color: var(--messages-list-bg-color);
+  }
+}

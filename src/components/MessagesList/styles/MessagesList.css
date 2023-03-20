@@ -1,0 +1,67 @@
+:root {
+  --assistant-message-bg-color: hsl(235, 11%, 23%);
+  --user-message-bg-color: hsl(0, 0%, 24%);
+}
+
+.messages-list {
+  height: 85vh;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(232, 11%, 30%);
+  overflow-y: scroll;
+}
+.messages-list > .assistant-message-container {
+  margin-block: 1.5rem;
+  margin-inline: 1rem;
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: start;
+  align-items: center;
+}
+.messages-list > .assistant-message-container > .assistant-message {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--assistant-message-bg-color);
+}
+.messages-list > .user-message-container {
+  margin-block: 1.5rem;
+  margin-inline: 1rem;
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: end;
+  align-items: center;
+}
+.messages-list > .user-message-container > .user-message {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--user-message-bg-color);
+}
+.messages-list > .isTyping {
+  display: block;
+  position: absolute;
+  left: 45%;
+  bottom: 17%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.messages-list::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.messages-list::-webkit-scrollbar-track {
+  background-color: var(--messages-input-container-background);
+}
+
+.messages-list::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 1rem;
+}/*# sourceMappingURL=MessagesList.css.map */
